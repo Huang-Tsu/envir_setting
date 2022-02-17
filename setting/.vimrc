@@ -1,0 +1,139 @@
+	""plug-in
+" Plugins will be downloaded under the specified directory.	
+call plug#begin('~/.vim/plugged')
+
+" Declare the list of plugins
+	
+
+"自動調和背景與配色的關係
+"Plug 'junegunn/seoul256.vim'
+
+"讓ctrl-d變滑順
+Plug 'psliwka/vim-smoothie'
+
+Plug 'Preservim/nerdtree'
+
+"color scheme
+Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'Huang-Tsu/vim-syntax-extra'
+"Plug 'drewtempelmeyer/palenight.vim'
+
+Plug 'airblade/vim-gitgutter'
+
+	"highlight yank
+Plug 'machakann/vim-highlightedyank'
+
+	"airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+	
+"colo seoul256
+"colo seoul256-light
+"set background=dark
+
+
+	"airline
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '>>'
+let g:airline#extensions#tabline#show_splits = 0       " disables the buffer name that displays on the right of the tabline               
+let g:airline#extensions#tabline#show_tab_nr = 0       " disable tab numbers
+let g:airline#extensions#tabline#show_buffers = 0      " dont show buffers in the tabline
+let g:airline#extensions#tabline#show_close_button = 0 " remove 'X' at the end of the tabline
+let g:airline#extensions#tabline#tabs_label = ''       " can put text here like BUFFERS to denote buffers (I clear it so nothing is shown)
+let g:airline#extensions#tabline#buffers_label = ''    " can put text here like TABS to denote tabs (I clear it so nothing is shown)
+
+
+
+syntax on
+set cindent
+filetype on
+set novisualbell
+set visualbell t_vb=
+set nobackup
+set nocompatible
+"set runtimepath=$VIMRUNTIME "會關閉自己定義的腳本(插件管理)
+set background=dark
+set hlsearch
+set incsearch
+set scroll=3
+set ignorecase
+set smartcase
+set autoindent
+set showcmd
+set ruler
+set showmode
+"highlight SpecialKey ctermfg=240 guifg=#585858
+"highlight NonText ctermfg=240 guifg=#585858
+set shiftround
+":hi LineNr cterm=bold ctermfg=LightGrey ctermbg=NONE	"行號粗體
+":hi ColorColumn ctermbg=0 guibg=lightgrey
+:inoremap {<CR> {<CR>}<Esc>ko
+set shiftwidth=2	"自動縮排長度
+set tabstop=2
+set nu rnu
+set cursorline
+set cursorcolumn
+"hi CursorColumn cterm=none ctermbg=238 ctermfg=none
+"hi CursorLine cterm=none ctermbg=238 ctermfg=none
+"hi Comment ctermfg=lightyellow
+set viminfo='1000
+	"Press <F9> to run C
+map <F9> :w <CR> :!echo -e "(running \"%\")\n" && gcc % -msse -lrt -Wall -g -lm -fsanitize=undefined -fsanitize=address -o %< &&./%< <CR>
+	"-lm is for sqrt()
+	"-lrt for clock_gettime()
+	"-msse is for _mm_add_ps()
+"map <F9> :w <CR> :!echo -e "(running \"%\")\n" && gcc % -g -fsanitize=undefined -fsanitize=leak -fsanitize=address && ./a.out <CR>
+	"Press F8 to run C++
+map <F8> :w <CR> :!echo -e "(running \"%\")\n" && g++ % -Wall -g -lm -fsanitize=undefined -fsanitize=address -o %< &&./%< <CR>
+"the upper can be refered to: https://stackoverflow.com/questions/2627886/how-do-i-run-a-c-program-from-vim/2650621
+
+"using this https://github.com/bfrg/vim-cpp-modern plugin for syntax C++
+
+" Put all standard C and C++ keywords under Vim's highlight group 'Statement'
+" (affects both C and C++ files)
+"let g:cpp_simple_highlight = 1
+
+" Enable highlighting of C++11 attributes
+"let g:cpp_attributes_highlight = 1
+
+" Highlight struct/class member variables (affects both C and C++ files)
+"let g:cpp_member_highlight = 1
+
+
+	"for colroscheme : deep-space
+set termguicolors
+colorscheme deep-space
+let g:deepspace_italics=1
+let g:airline_theme='deep_space'
+
+
+
+	"option for gruvbox(vim_syntax)
+"autocmd vimenter * ++nested colorscheme gruvbox
+"let g:gruvbox_bold = 1
+"let g:gruvbox_italic=1
+"let g:gruvbox_italicize_comments=1
+"let g:gruvbox_transparent_bg = 1
+"let g:gruvbox_italicize_strings = 1
+"colorscheme gruvbox
+
+let g:smoothie_enabled=1
+"let g:smoothie_experimental_mappings=1	"This is experimental option. If there is bug, turn off it.
+
+	"concerning  NERDTree
+nnoremap <F5> :NERDTree<CR>
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+
+	"for vim_gitgutter
+set updatetime=100 "單位是ms
+
+	"about highlight_yank
+let g:highlightedyank_highlight_duration = -1  "yank will always open
+
