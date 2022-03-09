@@ -27,6 +27,8 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+	"color scheme for c++ & c
+Plug 'bfrg/vim-cpp-modern'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -137,3 +139,24 @@ set updatetime=100 "單位是ms
 	"about highlight_yank
 let g:highlightedyank_highlight_duration = -1  "yank will always open
 
+	"for taglist
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Auto_Open = 1     " 讓 Tlist 自動開啟
+let Tlist_Show_One_File = 1             " 不同時顯示多個文件的tag，只顯示當前文件的
+let Tlist_Exit_OnlyWindow = 1           " 如果taglist窗口是最後一個窗口，則退出vim
+let Tlist_Use_Right_Window = 1          " 在右側窗口中顯示taglist窗口
+nnoremap <silent> <F4> :TlistToggle<CR> " F8 為開啟/關閉 Tlist 的快速鍵
+
+	"options for vim-cpp-modern
+" Disable function highlighting (affects both C and C++ files)
+let g:cpp_function_highlight = 0
+
+" Enable highlighting of C++11 attributes
+let g:cpp_attributes_highlight = 1
+
+" Highlight struct/class member variables (affects both C and C++ files)
+let g:cpp_member_highlight = 1
+
+" Put all standard C and C++ keywords under Vim's highlight group 'Statement'
+" (affects both C and C++ files)
+let g:cpp_simple_highlight = 1
