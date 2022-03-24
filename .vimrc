@@ -66,6 +66,7 @@ set scroll=3
 set ignorecase
 set smartcase
 set autoindent
+au BufEnter * set fo-=c fo-=r fo-=o "disable auto comment when press 'o' src:shorturl.at/fkAH5"
 set showcmd
 set ruler
 set showmode
