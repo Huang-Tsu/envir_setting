@@ -140,12 +140,18 @@ set updatetime=100 "單位是ms
 	"about highlight_yank
 let g:highlightedyank_highlight_duration = -1  "yank will always open
 
+	"for ctags
+set tags=tags
+set autochdir
 	"for taglist
+"let Tlist_Compact_Format=1 "Hide help menu
 let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 let Tlist_Auto_Open = 1     " 讓 Tlist 自動開啟
 let Tlist_Show_One_File = 1             " 不同時顯示多個文件的tag，只顯示當前文件的
 let Tlist_Exit_OnlyWindow = 1           " 如果taglist窗口是最後一個窗口，則退出vim
 let Tlist_Use_Right_Window = 1          " 在右側窗口中顯示taglist窗口
+let Tlist_Process_File_Always=1 				" 即時更新tags
+let Tlist_File_Fold_Auto_Close = 1 			" 自動摺疊
 nnoremap <silent> <F4> :TlistToggle<CR> " F8 為開啟/關閉 Tlist 的快速鍵
 
 	"options for vim-cpp-modern
