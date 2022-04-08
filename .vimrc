@@ -18,14 +18,14 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 Plug 'Huang-Tsu/vim-syntax-extra'
 "Plug 'drewtempelmeyer/palenight.vim'
 
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 
 	"highlight yank
 Plug 'machakann/vim-highlightedyank'
 
 	"airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
 
 	"color scheme for c++ & c
 Plug 'bfrg/vim-cpp-modern'
