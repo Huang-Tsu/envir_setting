@@ -146,7 +146,7 @@ set autochdir
 	"for taglist
 "let Tlist_Compact_Format=1 "Hide help menu
 let Tlist_Ctags_Cmd = '/usr/bin/ctags'
-let Tlist_Auto_Open = 1     " 讓 Tlist 自動開啟
+let Tlist_Auto_Open = 0     " 讓 Tlist 自動開啟
 let Tlist_Show_One_File = 1             " 不同時顯示多個文件的tag，只顯示當前文件的
 let Tlist_Exit_OnlyWindow = 1           " 如果taglist窗口是最後一個窗口，則退出vim
 let Tlist_Use_Right_Window = 1          " 在右側窗口中顯示taglist窗口
