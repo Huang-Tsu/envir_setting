@@ -70,7 +70,7 @@ set nocompatible
 set background=dark
 set hlsearch
 set incsearch
-"set scroll=3
+set scroll=11
 set ignorecase
 set smartcase
 set autoindent
