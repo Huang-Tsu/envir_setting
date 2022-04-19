@@ -17,7 +17,7 @@ call plug#begin('~/.vim/plugged')
 "Plug 'junegunn/seoul256.vim'
 
 "讓ctrl-d變滑順
-Plug 'psliwka/vim-smoothie'
+"Plug 'psliwka/vim-smoothie'
 
 Plug 'Preservim/nerdtree'
 
