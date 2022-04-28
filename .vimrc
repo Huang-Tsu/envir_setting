@@ -75,6 +75,7 @@ set ignorecase
 set smartcase
 set autoindent
 au BufEnter * set fo-=c fo-=r fo-=o "disable auto comment when press 'o' src:shorturl.at/fkAH5"
+set cino=g1	"讓class裡的public等字往後縮一格(遵照google style) source:https://reurl.cc/d2GYRV
 set showcmd
 set ruler
 set showmode
