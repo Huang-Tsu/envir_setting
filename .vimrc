@@ -1,4 +1,3 @@
-	
 	""plug-in
 	"automatically download plug management
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
@@ -43,7 +42,6 @@ call plug#end()
 	
 "colo seoul256
 "colo seoul256-light
-"set background=dark
 
 
 	"airline
@@ -88,8 +86,8 @@ set shiftround
 set shiftwidth=2	"自動縮排長度
 set tabstop=2
 set nu rnu
-set cursorline
-set cursorcolumn
+"set cursorline
+"set cursorcolumn
 "hi CursorColumn cterm=none ctermbg=238 ctermfg=none
 "hi CursorLine cterm=none ctermbg=238 ctermfg=none
 "hi Comment ctermfg=lightyellow
@@ -111,7 +109,7 @@ map <F8> :w <CR> :!echo -e "(running \"%\")\n" && g++ % -Wall -g -lm -fsanitize=
 "let g:cpp_simple_highlight = 1
 
 " Enable highlighting of C++11 attributes
-"let g:cpp_attributes_highlight = 1
+"let g:cpp_attributes_highlight = 0
 
 " Highlight struct/class member variables (affects both C and C++ files)
 "let g:cpp_member_highlight = 1
@@ -180,3 +178,8 @@ let g:cpp_member_highlight = 1
 " Put all standard C and C++ keywords under Vim's highlight group 'Statement'
 " (affects both C and C++ files)
 let g:cpp_simple_highlight = 1
+
+	"set vim without background(transparent)
+hi Normal guibg=NONE ctermbg=NONE
+highlight NonText ctermbg=none
+hi Normal ctermbg=none
