@@ -86,7 +86,7 @@ set shiftround
 set shiftwidth=2	"自動縮排長度
 set tabstop=2
 set nu rnu
-"set cursorline
+set cursorline
 "set cursorcolumn
 "hi CursorColumn cterm=none ctermbg=238 ctermfg=none
 "hi CursorLine cterm=none ctermbg=238 ctermfg=none
@@ -180,6 +180,6 @@ let g:cpp_member_highlight = 1
 let g:cpp_simple_highlight = 1
 
 	"set vim without background(transparent)
-hi Normal guibg=NONE ctermbg=NONE
-highlight NonText ctermbg=none
-hi Normal ctermbg=none
+"hi Normal guibg=NONE ctermbg=NONE
+"highlight NonText ctermbg=none
+"hi Normal ctermbg=none
