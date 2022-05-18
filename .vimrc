@@ -37,6 +37,8 @@ Plug 'machakann/vim-highlightedyank'
 	"color scheme for c++ & c
 Plug 'bfrg/vim-cpp-modern'
 
+	"indent_line
+Plug 'Yggdroot/indentLine'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 	
@@ -179,6 +181,10 @@ let g:cpp_member_highlight = 1
 " (affects both C and C++ files)
 let g:cpp_simple_highlight = 1
 
+	"for line_indent
+"let g:indentLine_setColors = 0
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+set expandtab
 	"set vim without background(transparent)
 "hi Normal guibg=NONE ctermbg=NONE
 "highlight NonText ctermbg=none
