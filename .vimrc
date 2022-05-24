@@ -95,13 +95,13 @@ set cursorline
 "hi Comment ctermfg=lightyellow
 set viminfo='1000
 	"Press <F9> to run C
-map <F9> :w <CR> :!echo -e "(running \"%\")\n" && gcc % -msse -lrt -Wall -g -lm -fsanitize=undefined -fsanitize=address -o %< &&./%< <CR>
+map <F9> :w <CR> :!echo -e "(running \"%<\")\n" && gcc % -msse -lrt -Wall -g -lm -fsanitize=undefined -fsanitize=address -o %< &&./%< <CR>
 	"-lm is for sqrt()
 	"-lrt for clock_gettime()
 	"-msse is for _mm_add_ps()
 "map <F9> :w <CR> :!echo -e "(running \"%\")\n" && gcc % -g -fsanitize=undefined -fsanitize=leak -fsanitize=address && ./a.out <CR>
 	"Press F8 to run C++
-map <F8> :w <CR> :!echo -e "(running \"%\")\n" && g++ % -Wall -g -lm -fsanitize=undefined -fsanitize=address -o %< &&./%< <CR>
+map <F8> :w <CR> :!echo -e "(running \"%<\")\n" && g++ % -Wall -g -lm -fsanitize=undefined -fsanitize=address -o %< &&./%< <CR>
 "the upper can be refered to: https://stackoverflow.com/questions/2627886/how-do-i-run-a-c-program-from-vim/2650621
 
 "using this https://github.com/bfrg/vim-cpp-modern plugin for syntax C++
@@ -122,7 +122,6 @@ set termguicolors
 colorscheme deep-space
 let g:deepspace_italics=1
 let g:airline_theme='deep_space'
-
 
 
 	"option for gruvbox(vim_syntax)
@@ -146,6 +145,12 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 let NERDTreeShowLineNumbers=1
 " make sure relative line numbers are used
 autocmd FileType nerdtree setlocal relativenumber
+
+  "for debugging in vim   //for help, see:https://www.dannyadam.com/blog/2019/05/debugging-in-vim/
+packadd termdebug       "auto add pack
+let g:termdebug_wide=1  "let sources code in right
+  "set <F10> as shortcut of running Termdebug
+map <F10> :Termdebug %<<CR>
 
 	"for vim_gitgutter
 "set updatetime=100 "單位是ms
